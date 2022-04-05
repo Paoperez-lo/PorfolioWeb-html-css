@@ -1,0 +1,567 @@
+* {
+    box-sizing: border-box;
+}
+:root{
+    --colorfondo1: #ffd5d5;
+    --colorfondo2:#170a19;
+    --color1:#bb2c60;
+    --color2: #ffc1fa;
+    --colorshadow: #d9adad;
+    --colortext: #838383;
+    --colorbutton: #d9adad;
+    --coloruno: #be5683;
+    --colordos: #ffc93c;
+    --colortres: #3ca59d;
+}
+body {
+    background-color: var(--colorfondo1);
+    font-size: 16px;
+    font-family: 'Varela Round', sans-serif;
+    color: var(--colorfondo2);
+}
+.contenedor {
+    overflow-y: scroll;
+    scroll-behavior: smooth;
+    width: 100%;
+    height: 100%;
+}
+.contenedor::-webkit-scrollbar {
+    display: none;
+}
+.contenedor-total {
+    display: flex;
+    height: 100vh;
+    width: 100vw;
+    overflow: hidden;
+}
+#mi, #servicios, #experiencia, #trabajos, #contacto {
+    padding: 60px 20px;
+    margin: auto;
+    max-width: 1080px;
+    background-color: var(--colorfondo1);
+}
+a {
+    text-decoration: none;
+    color: var(--color1);
+}
+button {
+    width: 128px;
+    height: 42px;
+    font-weight: 500;
+    border: none;
+    border-radius: 21px;
+    background-color: var(--colorbutton);
+}
+button:hover {
+    background-color: var(--colorfondo2);
+}
+button:focus,
+input:focus,
+textarea:focus,
+a:focus {
+    outline: none;
+}
+.titulo {
+    font-size: 38px;
+    text-align: left;
+    color: var(--colorfondo2);
+}
+.menu-desktop {
+    min-width: 290px;
+    max-width: 290px;
+    border-right: solid 1px rgba(255, 255, 255, 0.1);
+    padding-top: 40px;
+    padding-left: 50px;
+    box-sizing: border-box;
+    background-color: var(--colorfondo2);
+    color: var(--colorfondo1);
+}
+.navbar-mobile {
+    display: none;
+}
+.navbar-desktop {
+    display: flex;
+    flex-direction: column;
+    margin-top: 100px;
+    font-weight: 500;
+    color: var(--color1);
+}
+.menu-desktop > h1 {
+    font-size: 28px;
+    color: var(--colorfondo1);
+}
+.navbar-desktop > a {
+    display: flex;
+    align-items: center;
+    margin: 8px 0px;
+    height: 32px;
+}
+.navbar-desktop > a > i {
+    margin-right: 20px;
+    color: var(--colorfondo1);
+}
+.navbar-desktop a:hover {
+    color: var(--colorfondo1)
+}
+/*banner*/
+.fondo-banner {
+    background-image: url(img/fondo.svg);
+    width: 100%;
+    height: 100%;
+    position: absolute;
+}
+.banner-contenedor{
+    width: 100%;
+    height: 100%;
+    position: relative;
+    background-color: var(--colorfondo2);
+    text-align: center;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    color: var(--colorfondo1);
+}
+.banner-media {
+    margin-top: 16px;
+    font-size: 25px;
+}
+.banner-media > a > i {
+    color: var(--colorfondo1);
+}
+.banner-media-red {
+    margin-right: 16px;
+}
+.banner-media-red:last-child {
+    margin-right: 0px;
+}
+.banner-media-red :hover {
+    color: var(--color1);
+}
+.titulo-banner {
+    font-size: 38px;
+    margin-bottom: 8px;
+}
+.banner {
+    z-index: 1;
+}
+.boton-contactame {
+    margin-top: 24px;
+}
+.scroll {
+    position: absolute;
+    bottom: 26px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.scroll > img {
+    margin-top: 10px;
+    width: 15px;
+}
+.scroll:hover {
+    bottom: 36px;
+}
+.img-avatar {
+    width: 108px;
+    height: 108px;
+    margin-bottom: 24px;
+}
+/*sobre mi*/
+.mi-caja {
+    display: flex;
+    justify-content: space-between;
+    align-items: end;
+}
+.mi-avatar {
+    width: 150px;
+    margin-right: 20px;
+}
+.mi-card {
+    display: flex;
+    justify-content: space-between;
+    padding: 30px;
+    box-shadow: 0px 5px 20px 0px var(--colorshadow);
+    border-radius: 20px;
+    box-sizing: border-box;
+}
+.mi-card-descripcion {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 40%;
+    line-height: 1.7;
+}
+.mi-card-descripcion > button {
+    width: 160px;
+}
+.mi-card-progreso {
+    width: 50%;
+}
+.mi-card-progreso-contenido {
+    margin-bottom: 20px;
+}
+.mi-card-progreso-contenido:last-child {
+    margin-bottom: 0px;
+}
+.mi-card-progreso-contenido > h3 {
+    font-size: 16px;
+    margin: 0 0 16px 0;
+}
+.mi-card-barra-progreso {
+    height: 7px;
+    margin-bottom: 0;
+    background-color: var(--colorfondo1);
+    border-radius: 15px;
+    box-shadow: none;
+    overflow: hidden;
+    position: relative;
+}
+.mi-card-barra-incompleto {
+    height: 7px;
+    border-radius: 15px;
+}
+.mi-card-progreso-contenido:nth-child(1)
+.mi-card-barra-incompleto {
+    width: 85%;
+    background-color: var(--coloruno);
+}
+.mi-card-progreso-contenido:nth-child(2)
+.mi-card-barra-incompleto {
+    width: 70%;
+    background-color: var(--colordos);
+}
+.mi-card-progreso-contenido:nth-child(3)
+.mi-card-barra-incompleto {
+    width: 40%;
+    background-color: var(--colortres);
+}
+/*sercicios*/
+.servicios-contenedor-cursos,
+.trabajos-contenedor-varios {
+    display: flex;
+    justify-content: space-between;
+}
+.servicios-cursos,
+.trabajos-contenedor-card {
+    width: 30%;
+    margin: 0;
+    padding: 30px;
+    border-radius: 20px;
+    box-sizing: border-box;
+    text-align: center;
+    color: var(--colorfondo2);
+}
+.servicios-cursos:nth-child(1) {
+    background-color: var(--coloruno);
+    box-shadow: 0px 5px 20px 0px var(--coloruno);
+}
+.servicios-cursos:nth-child(2) {
+    background-color: var(--colordos);
+    box-shadow: 0px 5px 20px 0px var(--colordos);
+}
+.servicios-cursos:nth-child(3) {
+    background-color: var(--colortres);
+    box-shadow: 0px 5px 20px 0px var(--colortres);
+}
+/*experiencia*/
+.experiencia-contenedor-varios {
+    display: flex;
+    justify-content: space-between;
+}
+.experiencia-contenedor-card {
+    width: 50%;
+    margin-right: 20px;
+    padding: 30px;
+    border-radius: 20px;
+    background-color: var(--colorfondo1);
+    color: var(--colorfondo2);
+    box-shadow: 0px 5px 20px 0px var(--colorshadow);
+}
+.experiencia-contenedor-card:last-child {
+    margin-right: 0px;
+}
+.experiencia-card-contenido {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    padding: 0 0 50px 50px;
+    border-left: 1px solid var(--color1);
+}
+.experiencia-card-contenido:last-child {
+    padding: 0 0 0px 50px;
+}
+.experiencia-card-contenido > i {
+    position: absolute;
+    top: 0;
+    left: -8px;
+    background-color: var(--colorfondo1);
+    color: var(--color1);
+}
+.time-experiencia {
+    font-size: 14px;
+    color: var(--colortext);
+}
+.titulo-experiencia {
+    font-size: 20px;
+    font-weight: 500;
+    margin: 10px 0;
+}
+.descripcion-experiencia {
+    font-weight: lighter;
+    margin: 0;
+}
+/*trabajos*/
+.trabajos-contenedor {
+    text-align: center;
+}
+.trabajos-boton,
+.trabajos-boton:visited {
+    display: flex;
+    text-align: left;
+    color: var(--colorfondo2);
+}
+.trabajos-boton > i {
+    margin-right: 10px;
+}
+.trabajos-contenedor-varios {
+    flex-wrap: wrap;
+}
+.trabajos-contenedor-card {
+    position: relative;
+    overflow: hidden;
+    margin-bottom: 20px;
+    background-color: var(--colorfondo1);
+}
+.trabajos-contenedor-card > img {
+    width: 100%;
+    height: 200px;
+}
+.trabajos-card {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    right: 0;
+    opacity: 0;
+    background-color: var(--colorfondo2);
+    color: white;
+    box-sizing: border-box;
+    padding: 50px 0 0 30px;
+}
+.trabajos-contenedor-card:hover > .trabajos-card {
+    opacity: 0.7;
+}
+.trabajos-card > span {
+    font-weight: 500;
+    font-size: 28px;
+}
+/*contacto*/
+.contactame-contenido {
+    display: flex;
+    justify-content: space-between;
+}
+.contactame-titulo {
+    font-weight: 500;
+    margin: 0 0 10px;
+    font-size: 23px;
+    color: var(--colorfondo2);
+}
+.contactame-texto {
+    width: 30%;
+}
+.contactame-texto > p {
+    font-weight: lighter;
+    color: var(--colortext);
+}
+.contactame-formulario {
+    width: 60%;
+}
+.nombre-formulario {
+    display: flex;
+}
+.nombre-formulario > label {
+    width: 100%;
+    margin-right: 20px;
+}
+.nombre-formulario > label:last-child,
+.comentario-formulario:last-child {
+    margin-right: 0px;
+}
+.comentario-formulario > textarea {
+    padding: 20px;
+    margin: 20px 0;
+    min-height: 200px;
+    max-height: 200px;
+    min-width: 96%;
+    max-width: 96%;
+}
+.nombre-formulario > label > input,
+.comentario-formulario > textarea {
+    background-color: var(--colorfondo1);
+    width: 100%;
+    height: 60px;
+    border: none;
+    border-radius: 30px;
+    padding: 20px;
+    margin: 0;
+    box-shadow: 0px 5px 20px 0px var(--colorshadow);
+    box-sizing: border-box;
+}
+.nombre-formulario > label > input::placeholder,
+.comentario-formulario > textarea::placeholder {
+    color: var(--colortext)
+}
+.nombre-formulario,
+.comentario-formulario {
+    margin: 20px;
+}
+.boton-contacto {
+    margin-left: 20px;
+    margin-top: 20px;
+}
+/*footer*/
+footer {
+    width: 100%;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: auto;
+    color: var(--colorfondo1);
+    background-color: var(--colorfondo2);
+    padding: 0px 170px;
+}
+footer a:hover {
+    color: var(--colorshadow);
+}
+@media (max-width: 1000px) {
+    #mi, #servicios, #experiencia, #trabajos, #contacto {
+        max-width: initial;
+        padding: 40px 30px;
+        width: 100%;
+    }
+    .menu-desktop {
+        display: none;
+    }
+    .navbar-mobile {
+        display: block;
+        color: var(--color2);
+        background-color: var(--colorfondo2);
+    }
+    .navbar-mobile-label {
+        display: flex;
+        flex-direction: column;
+    }
+    .navbar-input,
+    .close-navbar {
+        display: none;
+    }
+    .navbar-input:checked ~ .close-navbar {
+        display: block;
+    }
+    .navbar-input:checked ~ .open-navbar {
+        display: none;
+    }
+    .close-navbar,
+    .open-navbar {
+        padding: 20px;
+        font-size: 20px;
+    }
+    .contenido-navbar {
+        flex-direction: column;
+        display: none;
+    }
+    .navbar-input:checked ~ .contenido-navbar {
+        display: flex;
+    }
+    .contenido-navbar > a > i {
+        color: var(--color2);
+        margin-right: 20px;
+    }
+    .contenido-navbar > a {
+        display: flex;
+        align-items: center;
+        height: 30px;
+        padding: 0 20px 0 20px;
+        margin: 8px 0px;
+    }
+    .banner-contenedor {
+        height: calc(100% - 63px);
+    }
+    .banner {
+        margin-bottom: 110px;
+    }
+    .mi-caja {
+        flex-direction: column;
+        align-items: center;
+    }
+    .mi-avatar {
+        margin: 0 0 20px 0;
+    }
+    .mi-card {
+        max-width: initial;
+        flex-direction: column;
+        width: 100%;
+    }
+    .mi-card-descripcion {
+        width: 100%;
+        margin-right: 0;
+    }
+    .mi-card-descripcion > button {
+        margin: 20px 0;
+    }
+    .mi-card-progreso {
+        width: 100%;
+    }
+    .mi-card-barra-progreso {
+        width: 100%;
+    }
+    .servicios-contenedor-cursos {
+        flex-wrap: wrap;
+    }
+    .servicios-cursos {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+    .servicios-cursos:nth-child(3) {
+        margin-bottom: 0px;
+    }
+    .experiencia-contenedor-varios {
+        flex-direction: column;
+    }
+    .experiencia-contenedor-card {
+        width: 100%;
+        margin: 0;
+    }
+    .experiencia-contenedor-card:last-child {
+        margin-top: 20px;
+    }
+    .trabajos-contenedor-card {
+        width: 100%;
+    }
+    .contactame-contenido {
+        flex-direction: column;
+    }
+    .contactame-texto {
+        width: 100%;
+    }
+    .contactame-formulario {
+        width: 100%;
+    }
+    .nombre-formulario {
+        display: flex;
+        flex-direction: column;
+    }
+    .nombre-formulario > label {
+        margin: 0;
+    }
+    .nombre-formulario > label:last-child {
+        margin-top: 20px;
+    }
+    footer {
+        padding: 0 10px;
+    }
+}
+
